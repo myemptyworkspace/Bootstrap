@@ -12,9 +12,9 @@ jobs:
     runs-on: macos-latest
 
     steps:
+      - name: Xcode
+        run: xcode-select --install
       - name: Install Theos
-        run: |
-          bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
+        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/roothide/theos/master/bin/install-theos)"
       - name: Build
-        run: |
-          make package
+        run: make package
